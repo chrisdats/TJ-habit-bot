@@ -12,8 +12,20 @@ def get_dataframe(firebase_url):
     df = pd.DataFrame(result_columns)
     return df
 
-def download_csv(firebase_url):
+def save_to_csv(df):
     path = 'data/activity.csv'
-    df = get_dataframe(firebase_url)
-    print('[*] Saving tab activity to %s' % path)
+    print('[*] Saving dataframe to %s' % path)
     df.to_csv(path)
+
+def process_dataframe(df):
+    from urllib.parse import urlparse
+    # parse hostnames, paths, and time spent on tab
+    print('[*] Writing engineered features to dataframe')
+    urlobjs = [urlparse(df.iloc[i]['url']) for i in range(len(df))]
+    hostnames = [obj.hostname for obj in urlobjs]
+    paths = [obj.path for obj in urlobjs]
+    times = [df.iloc[i]['endTime'] - df.iloc[i]['startTime'] for i in range(len(df))]
+    df['hostname'] = pd.Series(hostnames)
+    df['path'] = pd.Series(paths)
+    df['time'] = pd.Series(times)
+    return df
