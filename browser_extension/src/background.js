@@ -19,7 +19,7 @@ function formatTime(t) {
   return time.getHours() + ":" + time.getMinutes() + ":" + time.getSeconds();
 }
 
-var BAD_HOSTNAMES = ["facebook.com", "reddit.com"];
+var BAD_HOSTNAMES = ["www.facebook.com", "www.reddit.com"];
 
 function onSessionStart(session) {
   console.log("START", formatTime(session.startTime), session.url);
