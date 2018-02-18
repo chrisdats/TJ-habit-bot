@@ -18,7 +18,10 @@ def save_to_csv(df):
     df.to_csv(path)
 
 def process_dataframe(df):
-    from urllib.parse import urlparse
+    try:
+        from urllib.parse import urlparse
+    except:
+        from urlparse import urlparse
     # parse hostnames, paths, and time spent on tab
     print('[*] Writing engineered features to dataframe')
     urlobjs = [urlparse(df.iloc[i]['url']) for i in range(len(df))]
