@@ -1,3 +1,21 @@
+/* File: background.js
+ * -------------------
+ * This script defines an event page, which allows you
+ * to have a "single long-running script to handle some
+ * task or state."
+ *
+ * The general principle is that this script will register
+ * to listen for Chrome events, and then be instantiated
+ * when Chrome notices that event.
+ *
+ * 
+ * Note: Since the event page is created and destroyed many
+ * times throughout a browser session, you cannot store
+ * instance state in global variables.
+ */
+
+
+
 pubnub = new PubNub({
   publishKey : 'pub-c-9008e2a2-1e7e-40a6-aa4e-a9f6ddffb04d',
   subscribeKey : 'sub-c-c00d7a36-13bb-11e8-a8e8-9e7f09a8f511',
