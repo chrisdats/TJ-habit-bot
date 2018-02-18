@@ -1,0 +1,19 @@
+<html>
+    <body>
+        <script src="https://www.gstatic.com/firebasejs/4.10.0/firebase.js"></script>
+        <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyBhPK2tRDJvXbMqNWWy-qvYx0WPnqMfFsM",
+            authDomain: "monitor-a80a5.firebaseapp.com",
+            databaseURL: "https://monitor-a80a5.firebaseio.com",
+            projectId: "monitor-a80a5",
+            storageBucket: "",
+            messagingSenderId: "134254052426"
+        };
+        firebase.initializeApp(config);
+        // read a thing
+        firebase.database().ref('team').once('value').then(snapshot => console.log(snapshot.val()))
+        </script>
+    </body>
+</html>
