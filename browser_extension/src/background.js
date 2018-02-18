@@ -37,12 +37,16 @@ function formatTime(t) {
   return time.getHours() + ":" + time.getMinutes() + ":" + time.getSeconds();
 }
 
-var BAD_HOSTNAMES = ["facebook.com", "reddit.com"];
+var BAD_HOSTNAMES = ["www.facebook.com", "www.reddit.com"];
 
 function onSessionStart(session) {
   console.log("START", formatTime(session.startTime), session.url);
-  url = new URL(session.url);
-  broadcast(BAD_HOSTNAMES.includes(url.hostname) ? 'BAD' : 'GOOD');
+  var url = new URL(session.url);
+  var message = BAD_HOSTNAMES.includes(url.hostname) ? 'BAD' : 'GOOD'
+  broadcast(message);
+  if (true && message == 'BAD') {
+    alert('Alert: You indicated that you would like to avoid this website!');
+  }
 }
 
 function onSessionEnd(session) {
