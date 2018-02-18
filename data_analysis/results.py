@@ -1,0 +1,21 @@
+COOC_STRING = """www.reddit.com i.imgur.com
+www.google.com stackoverflow.com
+imgur.com www.netflix.com
+github.com devpost.com
+www.netflix.com imgur.com
+mail.google.com cruzhacks-2018.slack.com
+www.pythonanywhere.com server166.web-hosting.com:2083
+devpost.com cruzhacks-2018.slack.com
+www.hackthissite.org www.netflix.com
+canvas.ucsc.edu login.ucsc.edu
+i.imgur.com www.reddit.com
+www.linkedin.com www.latimes.com
+piazza.com canvas.ucsc.edu
+login.ucsc.edu canvas.ucsc.edu
+server166.web-hosting.com:2083 www.pythonanywhere.com
+www.latimes.com www.linkedin.com
+news.ycombinator.com www.netflix.com
+stackoverflow.com www.google.com
+cruzhacks-2018.slack.com devpost.com
+www.nytimes.com www.linkedin.com
+<UNK> www.reddit.com"""

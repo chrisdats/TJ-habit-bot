@@ -1,21 +1,18 @@
 import sys
 import json
 from os.path import join, dirname
-from watson_developer_cloud import TextToSpeechV1
+# from watson_developer_cloud import TextToSpeechV1
 import os
-from weather import Weather
 import time
-from data_utils import get_dataframe, save_to_csv, process_dataframe
+from data_utils import get_dataframe, save_to_csv, process_dataframe, compute_metrics
 
 
 FIREBASE_URL = "https://monitor-a80a5.firebaseio.com/"
 
-weather = Weather()
-
-text_to_speech = TextToSpeechV1(
-    username='6952ae44-af37-45dd-b83d-5a1d0c1cc785',
-    password='BsjKdzv84jF8',
-    x_watson_learning_opt_out=True)  # Optional flag
+# text_to_speech = TextToSpeechV1(
+#     username='6952ae44-af37-45dd-b83d-5a1d0c1cc785',
+#     password='BsjKdzv84jF8',
+#     x_watson_learning_opt_out=True)  # Optional flag
 
 def sound(text):
     with open('output.wav', 'wb') as audio_file:
@@ -29,8 +26,8 @@ def sound(text):
 
 def main():
     df = process_dataframe(get_dataframe(FIREBASE_URL))
-    print('Last five rows:\n', df[-5:][['url', 'time']], '\n')
-    save_to_csv(df)
+    results = compute_metrics(df)
+    print(results)
 
 if __name__ == '__main__':
     main()
