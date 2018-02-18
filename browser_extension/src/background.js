@@ -29,7 +29,7 @@ firebase.initializeApp(config);
 db = firebase.database().ref('activity');
 
 function logSessionEvent(session) {
-  var newEntry = activityRef.push();
+  var newEntry = db.push();
   newEntry.set({
     url: session.url,
     startTime: session.startTime,
