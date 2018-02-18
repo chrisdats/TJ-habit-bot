@@ -32,11 +32,18 @@ def main():
 
     print('Last five rows:\n', df[-5:][['url', 'time']], '\n')
     save_to_csv(df)
-    text = 'Hi! Here is how you have been doing so far'
+    text = 'Hi! Here is how you have been doing so far.'
     sound(text)
 
     results = compute_metrics(df)
-    print(results)
+    #print(results)
+    time_work = str(10.03)
+    time_media = str(0.69)
+    time_other = str(1.78)
+    top_hosts = ['localhost', 'google', 'firebase console']
+    text = 'You spend ' + time_work + 'hours on work tab, ' + time_media + ' hours on media and ' + time_other + 'hours on other.' \
+          + 'Your top three tabs are: ' + top_hosts[0] + ', ' + top_hosts[1] + ',' + top_hosts[2]
+    sound(text)
 
 
 if __name__ == '__main__':

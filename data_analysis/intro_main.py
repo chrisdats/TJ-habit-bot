@@ -38,10 +38,10 @@ def main():
     condition = location.condition()
     print(condition.text())
 
-    text = 'Let me check the weather for you. Here you go! The weather of today in San Jose is'  + condition.temp() + 'degrees, ' + condition.text()
+    text = 'Let me check the weather for you. Here you go! The weather of today in San Jose is '  + condition.temp() + 'degrees, ' + condition.text()
     sound(text)
 
-    text = 'See, perfect chilly weather to hack! '
+    text = 'Seems like a less favorable day to go hang-out. Well you should probably hack hack hack.'
     sound(text)
 
 if __name__ == '__main__':
