@@ -31,6 +31,8 @@ def main():
     df = process_dataframe(get_dataframe(FIREBASE_URL))
     print('Last five rows:\n', df[-5:][['url', 'time']], '\n')
     save_to_csv(df)
+    text = 'Hi! Here is how you have been doing so far'
+    
 
 if __name__ == '__main__':
     main()
