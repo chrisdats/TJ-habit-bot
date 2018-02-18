@@ -28,21 +28,6 @@ def sound(text):
     audio_file.close()
 
 def main():
-
-    text = 'Hi! Are you ready for tree hacks? Go!'
-    sound(text)
-
-    location = weather.lookup_by_location('san jose')
-    condition = location.condition()
-    print(condition.text())
-
-    text = 'The weather of today is ' + condition.temp() + 'degrees, ' + condition.text()
-    sound(text)
-
-    text = 'Perfect chilly weather to hack! Wow'
-    sound(text)
-
-
     df = process_dataframe(get_dataframe(FIREBASE_URL))
     print('Last five rows:\n', df[-5:][['url', 'time']], '\n')
     save_to_csv(df)
